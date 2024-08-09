@@ -1,0 +1,16 @@
+import {defineConfig} from 'rollup';
+import typescript from "@rollup/plugin-typescript"
+
+export default defineConfig({
+    input:"src/index.ts",
+    output:{
+        // isme directory deni hai
+        dir:"dist",
+        format:"es",
+        name:"packages",
+
+    },
+    external:['react', 'react-dom'],
+    plugins:[typescript({tsconfig:"tsconfig.json"})],
+
+})
